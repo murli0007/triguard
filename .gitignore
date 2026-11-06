@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.log
+backend/models/url_model.joblib
+backend/models/url_model_demo.joblib
+backend/models/email_model.joblib
+backend/models/email_vectorizer.joblib
+backend/models/malware_model.joblib
+data/raw/
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "model_name": "DEMO URL lexical Logistic Regression",
+  "version": "demo-2.0.0",
+  "dataset": "DEMO synthetic URL fixtures",
+  "training_source": "demo",
+  "training_date": "2026-09-26T17:58:02.673360+00:00",
+  "feature_count": 35,
+  "rows": 24,
+  "metrics": {
+    "status": "not reported; synthetic demo examples are not an evaluation dataset"
+  },
+  "metrics_are_population_claims": false
+}

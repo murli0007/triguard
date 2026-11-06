@@ -1,0 +1,2134 @@
+{
+  "model_name": "char_tfidf_logistic_regression",
+  "version": "3.0.0-candidate",
+  "candidate_path": "/Users/kshitijdongre/Desktop/ai_phishing_detector_final/backend/models/url_model_v3.joblib",
+  "training_source": "real",
+  "training_timestamp_utc": "2026-09-26T23:54:26.614612+00:00",
+  "training_dataset_sources": [
+    "UCI PhiUSIIL 967"
+  ],
+  "dataset_rows": 234461,
+  "dataset_class_counts": {
+    "legitimate": 134747,
+    "phishing": 99714
+  },
+  "feature_count": 39,
+  "feature_names": [
+    "url_length",
+    "domain_length",
+    "path_length",
+    "query_length",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_question",
+    "num_equals",
+    "num_at",
+    "num_ampersands",
+    "num_percent",
+    "num_digits",
+    "num_letters",
+    "num_subdomains",
+    "is_https",
+    "is_ip_host",
+    "has_punycode",
+    "has_port",
+    "has_fragment",
+    "suspicious_word_count",
+    "digit_ratio",
+    "letter_ratio",
+    "special_ratio",
+    "host_label_count",
+    "host_max_label_length",
+    "host_digit_count",
+    "host_hyphen_count",
+    "path_segment_count",
+    "query_param_count",
+    "encoded_byte_count",
+    "suspicious_host_word_count",
+    "suspicious_path_word_count",
+    "url_char_entropy",
+    "host_char_entropy",
+    "path_char_entropy",
+    "query_char_entropy",
+    "has_unusual_port"
+  ],
+  "feature_configuration": {
+    "character_ngrams": "2-5, min_df=2, max_features=100000, sublinear_tf=true",
+    "word_ngrams": "1-2, min_df=2, max_features=60000, used only in word+character model",
+    "numeric_features": [
+      "url_length",
+      "domain_length",
+      "path_length",
+      "query_length",
+      "num_dots",
+      "num_hyphens",
+      "num_underscores",
+      "num_slashes",
+      "num_question",
+      "num_equals",
+      "num_at",
+      "num_ampersands",
+      "num_percent",
+      "num_digits",
+      "num_letters",
+      "num_subdomains",
+      "is_https",
+      "is_ip_host",
+      "has_punycode",
+      "has_port",
+      "has_fragment",
+      "suspicious_word_count",
+      "digit_ratio",
+      "letter_ratio",
+      "special_ratio",
+      "host_label_count",
+      "host_max_label_length",
+      "host_digit_count",
+      "host_hyphen_count",
+      "path_segment_count",
+      "query_param_count",
+      "encoded_byte_count",
+      "suspicious_host_word_count",
+      "suspicious_path_word_count",
+      "url_char_entropy",
+      "host_char_entropy",
+      "path_char_entropy",
+      "query_char_entropy",
+      "has_unusual_port"
+    ]
+  },
+  "validation_strategy": {
+    "method": "registrable-domain-disjoint StratifiedGroupKFold; 60/10/10/20 folds",
+    "seed": 42,
+    "temporal": false,
+    "timestamp_limitation": "source has no per-URL observation time",
+    "rows": {
+      "fit": 133206,
+      "calibration": 21038,
+      "validation": 31090,
+      "test": 49127
+    },
+    "fit_rows_including_hard_negative_training": 133232,
+    "hard_negative_train_rows": 26,
+    "hard_negative_train_domains": 24,
+    "hard_negative_validation_rows": 8,
+    "hard_negative_validation_domains": 8,
+    "hard_negative_test_rows": 29,
+    "hard_negative_test_domains": 18,
+    "hard_negative_domains_removed_from_UCI": 901,
+    "registrable_domains": {
+      "fit": 105302,
+      "calibration": 17620,
+      "validation": 17322,
+      "test": 35233
+    },
+    "domain_overlap_counts": {
+      "fit_validation": 0,
+      "fit_test": 0,
+      "calibration_fit": 0,
+      "calibration_validation": 0,
+      "calibration_test": 0,
+      "test_validation": 0
+    },
+    "class_counts": {
+      "fit": {
+        "legitimate": 80730,
+        "phishing": 52476
+      },
+      "calibration": {
+        "legitimate": 13542,
+        "phishing": 7496
+      },
+      "validation": {
+        "legitimate": 13379,
+        "phishing": 17711
+      },
+      "test": {
+        "legitimate": 27096,
+        "phishing": 22031
+      }
+    }
+  },
+  "test_strategy": "Untouched registrable-domain-disjoint partition; selected model and threshold were fixed before final test scoring.",
+  "selected_thresholds": {
+    "suspicious_probability": 0.7,
+    "malicious_probability": 0.9,
+    "selection_rule": "No model met both validation FPR constraints; selected by validation PR-AUC then F1. Final test and hard-negative test domains are excluded from selection.",
+    "structural_severity_guard": "MALICIOUS requires two independent structural signals; otherwise high probability remains SUSPICIOUS."
+  },
+  "calibration": {
+    "method": "isotonic",
+    "validation_brier": 0.0015421108741786682,
+    "baseline_validation_brier": 0.002955825116922588,
+    "sigmoid_validation_brier": 0.0015878098032928258,
+    "isotonic_validation_brier": 0.0015421108741786682,
+    "improved_over_uncalibrated": true
+  },
+  "metrics": {
+    "threshold": 0.7,
+    "sample_count": 49127,
+    "accuracy": 0.9966413581126468,
+    "precision": 0.9999542710810316,
+    "recall": 0.9925559438972357,
+    "f1": 0.9962413722408255,
+    "roc_auc": 0.998763453293268,
+    "pr_auc": 0.9988093058659201,
+    "false_positive_rate": 3.690581635665781e-05,
+    "false_negative_rate": 0.007444056102764287,
+    "brier_score": 0.0025147645104471104,
+    "confusion_matrix": [
+      [
+        27095,
+        1
+      ],
+      [
+        164,
+        21867
+      ]
+    ],
+    "support": {
+      "legitimate": 27096,
+      "phishing": 22031
+    },
+    "threshold_sweep": [
+      {
+        "threshold": 0.3,
+        "sample_count": 49127,
+        "accuracy": 0.9973334418954953,
+        "precision": 0.9997261774370209,
+        "recall": 0.9943261767509418,
+        "f1": 0.9970188653482921,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.00022143489813994686,
+        "false_negative_rate": 0.005673823249058145,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27090,
+            6
+          ],
+          [
+            125,
+            21906
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.4,
+        "sample_count": 49127,
+        "accuracy": 0.997211309463228,
+        "precision": 0.9997717311906501,
+        "recall": 0.9940084426489946,
+        "f1": 0.9968817571412314,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.00018452908178328905,
+        "false_negative_rate": 0.005991557351005402,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27091,
+            5
+          ],
+          [
+            132,
+            21899
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.5,
+        "sample_count": 49127,
+        "accuracy": 0.9972316648686058,
+        "precision": 0.9998173766150755,
+        "recall": 0.9940084426489946,
+        "f1": 0.9969044475804616,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.00014762326542663124,
+        "false_negative_rate": 0.005991557351005402,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27092,
+            4
+          ],
+          [
+            132,
+            21899
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.6,
+        "sample_count": 49127,
+        "accuracy": 0.9972316648686058,
+        "precision": 0.9998630199534267,
+        "recall": 0.9939630520630022,
+        "f1": 0.9969043066557407,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.00011071744906997343,
+        "false_negative_rate": 0.006036947936997866,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27093,
+            3
+          ],
+          [
+            133,
+            21898
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.7,
+        "sample_count": 49127,
+        "accuracy": 0.9966413581126468,
+        "precision": 0.9999542710810316,
+        "recall": 0.9925559438972357,
+        "f1": 0.9962413722408255,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 3.690581635665781e-05,
+        "false_negative_rate": 0.007444056102764287,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27095,
+            1
+          ],
+          [
+            164,
+            21867
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.8,
+        "sample_count": 49127,
+        "accuracy": 0.9966617135180247,
+        "precision": 1.0,
+        "recall": 0.9925559438972357,
+        "f1": 0.9962640667000775,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.007444056102764287,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27096,
+            0
+          ],
+          [
+            164,
+            21867
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      },
+      {
+        "threshold": 0.9,
+        "sample_count": 49127,
+        "accuracy": 0.9966413581126468,
+        "precision": 1.0,
+        "recall": 0.9925105533112433,
+        "f1": 0.9962412009932342,
+        "roc_auc": 0.998763453293268,
+        "pr_auc": 0.9988093058659201,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.007489446688756752,
+        "brier_score": 0.0025147645104471104,
+        "confusion_matrix": [
+          [
+            27096,
+            0
+          ],
+          [
+            165,
+            21866
+          ]
+        ],
+        "support": {
+          "legitimate": 27096,
+          "phishing": 22031
+        }
+      }
+    ],
+    "probability_mean": 0.447853420771512,
+    "evaluation_group": "registrable-domain-disjoint unseen domains"
+  },
+  "hard_negative_metrics": {
+    "threshold": 0.7,
+    "sample_count": 29,
+    "accuracy": 0.3793103448275862,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": null,
+    "pr_auc": null,
+    "false_positive_rate": 0.6206896551724138,
+    "false_negative_rate": null,
+    "brier_score": 0.6569612639841899,
+    "confusion_matrix": [
+      [
+        11,
+        18
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "support": {
+      "legitimate": 29,
+      "phishing": 0
+    },
+    "model_warning_fpr_at_selected_threshold": 0.6206896551724138,
+    "results": [
+      {
+        "url": "https://www.login.gov",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.001327700663850332,
+        "prediction": "safe",
+        "risk_score": 0.13,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.support.transport.qld.gov.au",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.005572224603514788,
+        "prediction": "safe",
+        "risk_score": 0.56,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "Hostname has 4 subdomain labels."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.support.xerox.com",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.001327700663850332,
+        "prediction": "safe",
+        "risk_score": 0.13,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.bvuniversity.edu.in/payment-procedure",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 0.21212121212121213,
+        "prediction": "safe",
+        "risk_score": 21.21,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: payment."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.bvuniversity.edu.in/fee-structure",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 0.21212121212121213,
+        "prediction": "safe",
+        "risk_score": 21.21,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://support.google.com/accounts/answer/32040?hl=en",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=201910460",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.amazon.in/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.6200117439337349,
+        "prediction": "safe",
+        "risk_score": 29.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.dropbox.com/login",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.010101010101010102,
+        "prediction": "safe",
+        "risk_score": 1.01,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.google.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.08974358974358974,
+        "prediction": "safe",
+        "risk_score": 8.97,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://google.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://myaccount.google.com/security",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://github.com/login?return_to=%2Fsettings",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://docs.github.com/en/authentication",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365",
+        "category": "official_content",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://account.microsoft.com/account",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: account."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://login.microsoftonline.com/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://appleid.apple.com/sign-in",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://support.apple.com/en-us/102656",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.paypal.com/signin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.paypal.com/myaccount/home",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.ebay.com/signin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.21212121212121213,
+        "prediction": "safe",
+        "risk_score": 21.21,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.bankofamerica.com/online-banking/sign-in/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.capitalone.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.21212121212121213,
+        "prediction": "safe",
+        "risk_score": 21.21,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.icicibank.com/personal-banking/online-services",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.sbi.co.in/web/personal-banking",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://login.gov/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.instagram.com/accounts/login/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.6923076923076923,
+        "prediction": "safe",
+        "risk_score": 29.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 0
+      }
+    ],
+    "categories": {
+      "official_account": {
+        "threshold": 0.7,
+        "sample_count": 3,
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 1.0,
+        "false_negative_rate": null,
+        "brier_score": 1.0,
+        "confusion_matrix": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 3,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 1.0,
+        "results": [
+          {
+            "url": "https://myaccount.google.com/security",
+            "category": "official_account",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://account.microsoft.com/account",
+            "category": "official_account",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: account."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.paypal.com/myaccount/home",
+            "category": "official_account",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          }
+        ]
+      },
+      "official_content": {
+        "threshold": 0.7,
+        "sample_count": 1,
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 1.0,
+        "false_negative_rate": null,
+        "brier_score": 1.0,
+        "confusion_matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 1,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 1.0,
+        "results": [
+          {
+            "url": "https://www.microsoft.com/en-us/microsoft-365",
+            "category": "official_content",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          }
+        ]
+      },
+      "official_help": {
+        "threshold": 0.7,
+        "sample_count": 4,
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 1.0,
+        "false_negative_rate": null,
+        "brier_score": 1.0,
+        "confusion_matrix": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 4,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 1.0,
+        "results": [
+          {
+            "url": "https://support.google.com/accounts/answer/32040?hl=en",
+            "category": "official_help",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=201910460",
+            "category": "official_help",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://docs.github.com/en/authentication",
+            "category": "official_help",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://support.apple.com/en-us/102656",
+            "category": "official_help",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          }
+        ]
+      },
+      "official_home": {
+        "threshold": 0.7,
+        "sample_count": 4,
+        "accuracy": 0.75,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 0.25,
+        "false_negative_rate": null,
+        "brier_score": 0.35936597078689736,
+        "confusion_matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 4,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 0.25,
+        "results": [
+          {
+            "url": "https://www.amazon.in/",
+            "category": "official_home",
+            "expected_label": 0,
+            "model_probability": 0.6200117439337349,
+            "prediction": "safe",
+            "risk_score": 29.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.google.com/",
+            "category": "official_home",
+            "expected_label": 0,
+            "model_probability": 0.08974358974358974,
+            "prediction": "safe",
+            "risk_score": 8.97,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://google.com/",
+            "category": "official_home",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.capitalone.com/",
+            "category": "official_home",
+            "expected_label": 0,
+            "model_probability": 0.21212121212121213,
+            "prediction": "safe",
+            "risk_score": 21.21,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 0
+          }
+        ]
+      },
+      "official_login": {
+        "threshold": 0.7,
+        "sample_count": 10,
+        "accuracy": 0.3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 0.7,
+        "false_negative_rate": null,
+        "brier_score": 0.7524387379865235,
+        "confusion_matrix": [
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 10,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 0.7,
+        "results": [
+          {
+            "url": "https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: signin."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.dropbox.com/login",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 0.010101010101010102,
+            "prediction": "safe",
+            "risk_score": 1.01,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://github.com/login?return_to=%2Fsettings",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://login.microsoftonline.com/",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://appleid.apple.com/sign-in",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.paypal.com/signin",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: signin."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.ebay.com/signin",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 0.21212121212121213,
+            "prediction": "safe",
+            "risk_score": 21.21,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: signin."
+            ],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.bankofamerica.com/online-banking/sign-in/",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://login.gov/",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.instagram.com/accounts/login/",
+            "category": "official_login",
+            "expected_label": 0,
+            "model_probability": 0.6923076923076923,
+            "prediction": "safe",
+            "risk_score": 29.0,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 0
+          }
+        ]
+      },
+      "official_payment": {
+        "threshold": 0.7,
+        "sample_count": 4,
+        "accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": null,
+        "brier_score": 0.5224977043158862,
+        "confusion_matrix": [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 4,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 0.5,
+        "results": [
+          {
+            "url": "https://www.bvuniversity.edu.in/payment-procedure",
+            "category": "official_payment",
+            "expected_label": 0,
+            "model_probability": 0.21212121212121213,
+            "prediction": "safe",
+            "risk_score": 21.21,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: payment."
+            ],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.bvuniversity.edu.in/fee-structure",
+            "category": "official_payment",
+            "expected_label": 0,
+            "model_probability": 0.21212121212121213,
+            "prediction": "safe",
+            "risk_score": 21.21,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.icicibank.com/personal-banking/online-services",
+            "category": "official_payment",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          },
+          {
+            "url": "https://www.sbi.co.in/web/personal-banking",
+            "category": "official_payment",
+            "expected_label": 0,
+            "model_probability": 1.0,
+            "prediction": "suspicious",
+            "risk_score": 69.0,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 1
+          }
+        ]
+      },
+      "uci_legitimate_suspicious_terms": {
+        "threshold": 0.7,
+        "sample_count": 3,
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc": null,
+        "pr_auc": null,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": null,
+        "brier_score": 1.1525088379197641e-05,
+        "confusion_matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "support": {
+          "legitimate": 3,
+          "phishing": 0
+        },
+        "model_warning_fpr_at_selected_threshold": 0.0,
+        "results": [
+          {
+            "url": "https://www.login.gov",
+            "category": "uci_legitimate_suspicious_terms",
+            "expected_label": 0,
+            "model_probability": 0.001327700663850332,
+            "prediction": "safe",
+            "risk_score": 0.13,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "URL contains security/account terms: login."
+            ],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.support.transport.qld.gov.au",
+            "category": "uci_legitimate_suspicious_terms",
+            "expected_label": 0,
+            "model_probability": 0.005572224603514788,
+            "prediction": "safe",
+            "risk_score": 0.56,
+            "domain_seen_in_fit": false,
+            "indicators": [
+              "Hostname has 4 subdomain labels."
+            ],
+            "threshold_prediction": 0
+          },
+          {
+            "url": "https://www.support.xerox.com",
+            "category": "uci_legitimate_suspicious_terms",
+            "expected_label": 0,
+            "model_probability": 0.001327700663850332,
+            "prediction": "safe",
+            "risk_score": 0.13,
+            "domain_seen_in_fit": false,
+            "indicators": [],
+            "threshold_prediction": 0
+          }
+        ]
+      }
+    },
+    "threshold_used": 0.7,
+    "note": "Held-out challenge URLs are manually curated or mined from UCI legitimate rows; descriptive only, not used for fit or threshold/model selection."
+  },
+  "hard_negative_validation_metrics": {
+    "threshold": 0.7,
+    "sample_count": 8,
+    "accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": null,
+    "pr_auc": null,
+    "false_positive_rate": 0.5,
+    "false_negative_rate": null,
+    "brier_score": 0.5000163365179077,
+    "confusion_matrix": [
+      [
+        4,
+        4
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "support": {
+      "legitimate": 8,
+      "phishing": 0
+    },
+    "model_warning_fpr_at_selected_threshold": 0.5,
+    "results": [
+      {
+        "url": "https://www.secure-marine.com",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.001327700663850332,
+        "prediction": "safe",
+        "risk_score": 0.13,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: secure."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.password-depot.de",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.00980392156862745,
+        "prediction": "safe",
+        "risk_score": 0.98,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: password."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.e-verify.gov",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.001327700663850332,
+        "prediction": "safe",
+        "risk_score": 0.13,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: verify."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.support.cedcommerce.com",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.005572224603514788,
+        "prediction": "safe",
+        "risk_score": 0.56,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.bharatividyapeethfees.com/college/payment",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: payment."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://example.com/login/secure/account/verify/payment?continue=%2Fdashboard%3Fstep%3D2",
+        "category": "reserved_domain_probe",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "malicious",
+        "risk_score": 100.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: account, login, payment, secure, verify."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.bbc.com/news/technology",
+        "category": "official_content",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html",
+        "category": "official_government",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": false,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      }
+    ]
+  },
+  "baseline_on_same_final_test": {
+    "model_name": "url_char_tfidf_logistic_regression",
+    "same_registrable_domain_disjoint_test_at_0_70": {
+      "threshold": 0.7,
+      "sample_count": 49127,
+      "accuracy": 0.9975777067600301,
+      "precision": 0.9999087424712538,
+      "recall": 0.9946893014388816,
+      "f1": 0.9972921928686828,
+      "roc_auc": 0.9991085631317183,
+      "pr_auc": 0.9993124330064102,
+      "false_positive_rate": 7.381163271331562e-05,
+      "false_negative_rate": 0.005310698561118424,
+      "brier_score": 0.001996031800466416,
+      "confusion_matrix": [
+        [
+          27094,
+          2
+        ],
+        [
+          117,
+          21914
+        ]
+      ],
+      "support": {
+        "legitimate": 27096,
+        "phishing": 22031
+      }
+    },
+    "same_test_at_candidate_selected_threshold": {
+      "threshold": 0.7,
+      "sample_count": 49127,
+      "accuracy": 0.9975777067600301,
+      "precision": 0.9999087424712538,
+      "recall": 0.9946893014388816,
+      "f1": 0.9972921928686828,
+      "roc_auc": 0.9991085631317183,
+      "pr_auc": 0.9993124330064102,
+      "false_positive_rate": 7.381163271331562e-05,
+      "false_negative_rate": 0.005310698561118424,
+      "brier_score": 0.001996031800466416,
+      "confusion_matrix": [
+        [
+          27094,
+          2
+        ],
+        [
+          117,
+          21914
+        ]
+      ],
+      "support": {
+        "legitimate": 27096,
+        "phishing": 22031
+      }
+    },
+    "note": "Existing artifact evaluated on the same final test, after candidate selection; this result was not used for selection."
+  },
+  "baseline_hard_negative_metrics": {
+    "threshold": 0.7,
+    "sample_count": 29,
+    "accuracy": 0.10344827586206896,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": null,
+    "pr_auc": null,
+    "false_positive_rate": 0.896551724137931,
+    "false_negative_rate": null,
+    "brier_score": 0.8965386744416931,
+    "confusion_matrix": [
+      [
+        3,
+        26
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "support": {
+      "legitimate": 29,
+      "phishing": 0
+    },
+    "model_warning_fpr_at_selected_threshold": 0.896551724137931,
+    "results": [
+      {
+        "url": "https://www.login.gov",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.0176446547554639,
+        "prediction": "safe",
+        "risk_score": 1.76,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.support.transport.qld.gov.au",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.0045624389936334475,
+        "prediction": "safe",
+        "risk_score": 0.46,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "Hostname has 4 subdomain labels."
+        ],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.support.xerox.com",
+        "category": "uci_legitimate_suspicious_terms",
+        "expected_label": 0,
+        "model_probability": 0.012462601519844952,
+        "prediction": "safe",
+        "risk_score": 1.25,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 0
+      },
+      {
+        "url": "https://www.bvuniversity.edu.in/payment-procedure",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 0.9999950669611504,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: payment."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.bvuniversity.edu.in/fee-structure",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 0.9999983404774775,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://support.google.com/accounts/answer/32040?hl=en",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=201910460",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.amazon.in/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.9999737430972783,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.dropbox.com/login",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999864108329087,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.google.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.9997263610440492,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://google.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.9999998821349146,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://myaccount.google.com/security",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 0.9999999983210337,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://github.com/login?return_to=%2Fsettings",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://docs.github.com/en/authentication",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 0.9999999999999996,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365",
+        "category": "official_content",
+        "expected_label": 0,
+        "model_probability": 0.9999999999999958,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://account.microsoft.com/account",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 0.9999999993178468,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: account."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://login.microsoftonline.com/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999999892371346,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://appleid.apple.com/sign-in",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999999980610452,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://support.apple.com/en-us/102656",
+        "category": "official_help",
+        "expected_label": 0,
+        "model_probability": 0.9999999999999998,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.paypal.com/signin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999828295251062,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.paypal.com/myaccount/home",
+        "category": "official_account",
+        "expected_label": 0,
+        "model_probability": 0.9999999999999871,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.ebay.com/signin",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999738541137307,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: signin."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.bankofamerica.com/online-banking/sign-in/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.capitalone.com/",
+        "category": "official_home",
+        "expected_label": 0,
+        "model_probability": 0.9999305423490403,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.icicibank.com/personal-banking/online-services",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.sbi.co.in/web/personal-banking",
+        "category": "official_payment",
+        "expected_label": 0,
+        "model_probability": 0.9999999999999847,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://login.gov/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 0.9999999900769049,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      },
+      {
+        "url": "https://www.instagram.com/accounts/login/",
+        "category": "official_login",
+        "expected_label": 0,
+        "model_probability": 1.0,
+        "prediction": "suspicious",
+        "risk_score": 69.0,
+        "domain_seen_in_fit": null,
+        "indicators": [
+          "URL contains security/account terms: login."
+        ],
+        "threshold_prediction": 1
+      }
+    ],
+    "threshold_used": 0.7
+  },
+  "python_version": "3.11.16",
+  "library_versions": {
+    "scikit_learn": "1.7.2",
+    "pandas": "2.3.2",
+    "numpy": "2.3.3",
+    "tldextract": "5.3.0"
+  },
+  "latency_and_size": {
+    "validation_metrics_at_0_50": {
+      "threshold": 0.5,
+      "sample_count": 31090,
+      "accuracy": 0.9982952717915728,
+      "precision": 0.9998867625410486,
+      "recall": 0.9971204336288183,
+      "f1": 0.9985016820738982,
+      "roc_auc": 0.9994958588611433,
+      "pr_auc": 0.9996384250669986,
+      "false_positive_rate": 0.00014948800358771208,
+      "false_negative_rate": 0.0028795663711817516,
+      "brier_score": 0.0015421108741786682,
+      "confusion_matrix": [
+        [
+          13377,
+          2
+        ],
+        [
+          51,
+          17660
+        ]
+      ],
+      "support": {
+        "legitimate": 13379,
+        "phishing": 17711
+      }
+    },
+    "threshold_sweep": [
+      {
+        "threshold": 0.3,
+        "sample_count": 31090,
+        "accuracy": 0.9982952717915728,
+        "precision": 0.999660441426146,
+        "recall": 0.997346281971656,
+        "f1": 0.9985020208586529,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.00044846401076313624,
+        "false_negative_rate": 0.002653718028343967,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13373,
+            6
+          ],
+          [
+            47,
+            17664
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.4,
+        "sample_count": 31090,
+        "accuracy": 0.9983596011579285,
+        "precision": 0.9998867753623188,
+        "recall": 0.9972333578002371,
+        "f1": 0.9985583038869258,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.00014948800358771208,
+        "false_negative_rate": 0.002766642199762859,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13377,
+            2
+          ],
+          [
+            49,
+            17662
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.5,
+        "sample_count": 31090,
+        "accuracy": 0.9982952717915728,
+        "precision": 0.9998867625410486,
+        "recall": 0.9971204336288183,
+        "f1": 0.9985016820738982,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.00014948800358771208,
+        "false_negative_rate": 0.0028795663711817516,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13377,
+            2
+          ],
+          [
+            51,
+            17660
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.6,
+        "sample_count": 31090,
+        "accuracy": 0.9982631071083949,
+        "precision": 0.9998867561293245,
+        "recall": 0.9970639715431088,
+        "f1": 0.9984733687662558,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.00014948800358771208,
+        "false_negative_rate": 0.0029360284568911974,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13377,
+            2
+          ],
+          [
+            52,
+            17659
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.7,
+        "sample_count": 31090,
+        "accuracy": 0.9979414602766162,
+        "precision": 1.0,
+        "recall": 0.9963864265145954,
+        "f1": 0.9981899428700718,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.003613573485404551,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13379,
+            0
+          ],
+          [
+            64,
+            17647
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.8,
+        "sample_count": 31090,
+        "accuracy": 0.9979092955934384,
+        "precision": 1.0,
+        "recall": 0.996329964428886,
+        "f1": 0.9981616087337727,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.003670035571113997,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13379,
+            0
+          ],
+          [
+            65,
+            17646
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      },
+      {
+        "threshold": 0.9,
+        "sample_count": 31090,
+        "accuracy": 0.9979092955934384,
+        "precision": 1.0,
+        "recall": 0.996329964428886,
+        "f1": 0.9981616087337727,
+        "roc_auc": 0.9994958588611433,
+        "pr_auc": 0.9996384250669986,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.003670035571113997,
+        "brier_score": 0.0015421108741786682,
+        "confusion_matrix": [
+          [
+            13379,
+            0
+          ],
+          [
+            65,
+            17646
+          ]
+        ],
+        "support": {
+          "legitimate": 13379,
+          "phishing": 17711
+        },
+        "hard_negative_validation_fpr": 0.5
+      }
+    ],
+    "selected_validation_threshold": 0.7,
+    "selection_rule": "maximum validation recall among 0.30\u20130.90 thresholds with FPR <= 0.02; ties prefer F1 then the higher threshold",
+    "calibration": {
+      "method": "isotonic",
+      "validation_brier": 0.0015421108741786682,
+      "baseline_validation_brier": 0.002955825116922588,
+      "sigmoid_validation_brier": 0.0015878098032928258,
+      "isotonic_validation_brier": 0.0015421108741786682,
+      "improved_over_uncalibrated": true
+    },
+    "hard_negative_validation_fpr_at_selected_threshold": 0.5,
+    "fit_seconds": 8.004,
+    "calibration_and_validation_seconds": 5.084,
+    "model_size_bytes_compressed": 1678855,
+    "inference_latency_ms_mean": 0.6140889333437372,
+    "inference_latency_ms_p95": 0.6644901000527169,
+    "latency_sample_count": 30,
+    "latency_includes": "URL feature extraction and single-row model prediction"
+  },
+  "candidate_status": "not promoted automatically"
+}

@@ -1,0 +1,105 @@
+url,category,expected_label,provenance,review_date
+https://login.salesforce.com/,enterprise_login,0,Salesforce official production login endpoint; documented by Salesforce,2026-09-27
+https://www.okta.com/,enterprise_identity,0,Okta official identity and authentication service homepage,2026-09-27
+https://slack.com/signin,enterprise_login,0,Slack official sign-in endpoint,2026-09-27
+https://www.oracle.com/account/sign-in/,enterprise_account,0,Oracle official account sign-in path on its corporate domain,2026-09-27
+https://www.sap.com/account/login.html,enterprise_account,0,SAP official account path on its corporate domain,2026-09-27
+https://account.docusign.com/,enterprise_login,0,Docusign account sign-in host,2026-09-27
+https://accounts.shopify.com/store-login,enterprise_login,0,Shopify accounts host and store login path,2026-09-27
+https://myaccount.payoneer.com/,enterprise_account,0,Payoneer account portal host,2026-09-27
+https://www.ssa.gov/myaccount/,government_account,0,Official US Social Security online account page,2026-09-27
+https://my.gov.au/,government_account,0,Australian Government myGov account homepage,2026-09-27
+https://www.servicesaustralia.gov.au/centrelink-online-account,government_account,0,Services Australia Centrelink online account information,2026-09-27
+https://www.eesti.ee/en,government_portal,0,Estonian state portal homepage,2026-09-27
+https://www.singpass.gov.sg/,government_authentication,0,Singapore Government Singpass authentication homepage,2026-09-27
+https://www.mom.gov.sg/eservices,government_services,0,Singapore Ministry of Manpower e-services page,2026-09-27
+https://www.digital.gov.au/,government_services,0,Australian Government digital services homepage,2026-09-27
+https://www.myhealthrecord.gov.au/,government_account,0,Australian Government My Health Record service homepage,2026-09-27
+https://www.ato.gov.au/online-services,government_account,0,Australian Taxation Office online services page,2026-09-27
+https://www.revenue.ie/en/online-services/index.aspx,government_account,0,Irish Revenue online services page,2026-09-27
+https://www.mass.gov/,government_services,0,Massachusetts state government homepage,2026-09-27
+https://www.colorado.gov/,government_services,0,Colorado state government homepage,2026-09-27
+https://www.oregon.gov/,government_services,0,Oregon state government homepage,2026-09-27
+https://www.medicare.gov/account/login,government_account,0,US Medicare account login path,2026-09-27
+https://www.medicaid.gov/,government_services,0,US Medicaid government information homepage,2026-09-27
+https://www.hud.gov/,government_services,0,US Department of Housing and Urban Development homepage,2026-09-27
+https://www.epa.gov/,government_services,0,US Environmental Protection Agency homepage,2026-09-27
+https://my.bristol.ac.uk/,university_portal,0,University of Bristol student portal host,2026-09-27
+https://sso.nottingham.ac.uk/,university_authentication,0,University of Nottingham single sign-on host,2026-09-27
+https://myportal.durham.ac.uk/,university_portal,0,Durham University portal host,2026-09-27
+https://myaccount.birmingham.ac.uk/,university_account,0,University of Birmingham account portal host,2026-09-27
+https://my.kent.ac.uk/,university_portal,0,University of Kent portal host,2026-09-27
+https://my.cardiff.ac.uk/,university_portal,0,Cardiff University portal host,2026-09-27
+https://my.leicester.ac.uk/,university_portal,0,University of Leicester portal host,2026-09-27
+https://my.kingston.ac.uk/,university_portal,0,Kingston University portal host,2026-09-27
+https://my.brunel.ac.uk/,university_portal,0,Brunel University portal host,2026-09-27
+https://my.uclan.ac.uk/,university_portal,0,University of Central Lancashire portal host,2026-09-27
+https://my.uvm.edu/,university_portal,0,University of Vermont portal host,2026-09-27
+https://my.gmu.edu/,university_portal,0,George Mason University portal host,2026-09-27
+https://my.uri.edu/,university_portal,0,University of Rhode Island portal host,2026-09-27
+https://my.ohio.edu/,university_portal,0,Ohio University portal host,2026-09-27
+https://my.uoregon.edu/,university_portal,0,University of Oregon portal host,2026-09-27
+https://my.fiu.edu/,university_portal,0,Florida International University portal host,2026-09-27
+https://my.houston.edu/,university_portal,0,University of Houston portal host,2026-09-27
+https://my.txstate.edu/,university_portal,0,Texas State University portal host,2026-09-27
+https://my.vuw.ac.nz/,university_portal,0,Victoria University of Wellington portal host,2026-09-27
+https://my.une.edu.au/,university_portal,0,University of New England Australia portal host,2026-09-27
+https://my.ucc.ie/,university_portal,0,University College Cork portal host,2026-09-27
+https://www.citizensbank.com/,banking_home,0,Citizens Bank official website,2026-09-27
+https://www.regions.com/,banking_home,0,Regions Bank official website,2026-09-27
+https://www.53.com/,banking_home,0,Fifth Third Bank official website,2026-09-27
+https://www.natwest.com/,banking_home,0,NatWest official website,2026-09-27
+https://www.absa.co.za/,banking_home,0,Absa official banking website,2026-09-27
+https://www.standardbank.co.za/,banking_home,0,Standard Bank official website,2026-09-27
+https://www.sofi.com/login/,banking_login,0,SoFi official login path,2026-09-27
+https://www.wealthsimple.com/en-ca/login,banking_login,0,Wealthsimple official login path,2026-09-27
+https://robinhood.com/login,banking_login,0,Robinhood official login path,2026-09-27
+https://us.etrade.com/,banking_home,0,E*TRADE official website,2026-09-27
+https://www.principal.com/,banking_home,0,Principal Financial Group official website,2026-09-27
+https://www.bmo.com/,banking_home,0,BMO official banking website,2026-09-27
+https://www.scotiabank.com/,banking_home,0,Scotiabank official website,2026-09-27
+https://www.rbcroyalbank.com/,banking_home,0,RBC Royal Bank official website,2026-09-27
+https://www.td.com/ca/en/personal-banking,banking_home,0,TD Canada Trust personal banking page,2026-09-27
+https://www.nedbank.co.za/,banking_home,0,Nedbank official website,2026-09-27
+https://www.capitecbank.co.za/,banking_home,0,Capitec official website,2026-09-27
+https://www.nordea.com/,banking_home,0,Nordea official website,2026-09-27
+https://www.ing.com/,banking_home,0,ING official website,2026-09-27
+https://www.dbs.com/,banking_home,0,DBS official website,2026-09-27
+https://www.ocbc.com/,banking_home,0,OCBC official website,2026-09-27
+https://www.uob.com.sg/,banking_home,0,UOB official website,2026-09-27
+https://www.kasikornbank.com/,banking_home,0,KBank official website,2026-09-27
+https://www.maybank.com/,banking_home,0,Maybank official website,2026-09-27
+https://www.cimb.com/,banking_home,0,CIMB official website,2026-09-27
+https://www.bdo.com.ph/,banking_home,0,BDO Unibank official website,2026-09-27
+https://www.unionbank.com/,banking_home,0,UnionBank official website,2026-09-27
+https://www.bankofireland.com/,banking_home,0,Bank of Ireland official website,2026-09-27
+https://www.aib.ie/,banking_home,0,AIB official website,2026-09-27
+https://www.rabobank.com/,banking_home,0,Rabobank official website,2026-09-27
+https://www.abnamro.com/,banking_home,0,ABN AMRO official website,2026-09-27
+https://www.ubs.com/,banking_home,0,UBS official website,2026-09-27
+https://www.credit-suisse.com/,banking_home,0,Credit Suisse official website,2026-09-27
+https://www.db.com/,banking_home,0,Deutsche Bank official website,2026-09-27
+https://www.commerzbank.com/,banking_home,0,Commerzbank official website,2026-09-27
+https://www.n26.com/,banking_home,0,N26 official website,2026-09-27
+https://www.bunq.com/,banking_home,0,bunq official website,2026-09-27
+https://www.kbc.be/,banking_home,0,KBC official website,2026-09-27
+https://www.belfius.be/,banking_home,0,Belfius official website,2026-09-27
+https://www.santander.co.uk/,banking_home,0,Santander UK official website,2026-09-27
+https://www.ulsterbank.co.uk/,banking_home,0,Ulster Bank official website,2026-09-27
+https://www.metrobankonline.co.uk/,banking_home,0,Metro Bank UK official website,2026-09-27
+https://www.anz.com.au/,banking_home,0,ANZ Australia official website,2026-09-27
+https://www.kiwibank.co.nz/,banking_home,0,Kiwibank official website,2026-09-27
+https://www.westpac.co.nz/,banking_home,0,Westpac New Zealand official website,2026-09-27
+https://www.anz.co.nz/,banking_home,0,ANZ New Zealand official website,2026-09-27
+https://www.tangerine.ca/,banking_home,0,Tangerine Bank official website,2026-09-27
+https://www.eqbank.ca/,banking_home,0,EQ Bank official website,2026-09-27
+https://www.simplii.com/,banking_home,0,Simplii Financial official website,2026-09-27
+https://www.meridiancu.ca/,banking_home,0,Meridian Credit Union official website,2026-09-27
+https://www.coastcapitalsavings.com/,banking_home,0,Coast Capital Savings official website,2026-09-27
+https://www.bendigo.com.au/,banking_home,0,Bendigo Bank official website,2026-09-27
+https://www.australianunity.com.au/,banking_home,0,Australian Unity official website,2026-09-27
+https://www.nib.com.au/,banking_home,0,nib official website,2026-09-27
+https://www.hcf.com.au/,banking_home,0,HCF official website,2026-09-27
+https://www.healthpartners.com.au/,banking_home,0,Health Partners official member services website,2026-09-27
+https://www.health.vic.gov.au/,government_services,0,Victoria Department of Health official website,2026-09-27
+https://www.health.sa.gov.au/,government_services,0,South Australia Department of Health official website,2026-09-27

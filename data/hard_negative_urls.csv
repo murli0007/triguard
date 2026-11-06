@@ -1,0 +1,48 @@
+url,category,expected_label,provenance,review_date
+https://www.bharatividyapeethfees.com/college/payment,official_payment,0,Official Bharati Vidyapeeth payment procedure links to this fee portal,2026-09-27
+https://www.bvuniversity.edu.in/payment-procedure,official_payment,0,Official university site,2026-09-27
+https://www.bvuniversity.edu.in/fee-structure,official_payment,0,Official university fee information,2026-09-27
+https://example.com/login/secure/account/verify/payment?continue=%2Fdashboard%3Fstep%3D2,reserved_domain_probe,0,Reserved example.com documentation domain with synthetic lexical probe path,2026-09-27
+https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin,official_login,0,Google account sign-in hostname and path,2026-09-27
+https://support.google.com/accounts/answer/32040?hl=en,official_help,0,Google account support hostname and query URL,2026-09-27
+https://www.amazon.in/gp/help/customer/display.html?nodeId=201910460,official_help,0,Amazon India help URL with query parameter,2026-09-27
+https://www.amazon.in/,official_home,0,Amazon India public home page,2026-09-27
+https://www.bbc.com/news/technology,official_content,0,BBC news article URL,2026-09-27
+https://console.aws.amazon.com/console/home,official_login,0,AWS console hostname and account path,2026-09-27
+https://www.dropbox.com/login,official_login,0,Dropbox login path,2026-09-27
+https://www.google.com/,official_home,0,Google public home page,2026-09-27
+https://google.com/,official_home,0,Google public home page without www subdomain,2026-09-27
+https://myaccount.google.com/security,official_account,0,Google account security page,2026-09-27
+https://github.com/login?return_to=%2Fsettings,official_login,0,GitHub login with return query,2026-09-27
+https://docs.github.com/en/authentication,official_help,0,GitHub authentication documentation,2026-09-27
+https://www.microsoft.com/en-us/microsoft-365,official_content,0,Microsoft product information page,2026-09-27
+https://account.microsoft.com/account,official_account,0,Microsoft account page,2026-09-27
+https://login.microsoftonline.com/,official_login,0,Microsoft identity login hostname,2026-09-27
+https://appleid.apple.com/sign-in,official_login,0,Apple ID sign-in hostname and path,2026-09-27
+https://support.apple.com/en-us/102656,official_help,0,Apple support article,2026-09-27
+https://www.paypal.com/signin,official_login,0,PayPal sign-in page,2026-09-27
+https://www.paypal.com/myaccount/home,official_account,0,PayPal account path,2026-09-27
+https://www.ebay.com/signin,official_login,0,eBay sign-in page,2026-09-27
+https://www.chase.com/secure/,official_login,0,Chase secure banking path,2026-09-27
+https://www.bankofamerica.com/online-banking/sign-in/,official_login,0,Bank of America online banking sign-in path,2026-09-27
+https://www.wellsfargo.com/sign-on/,official_login,0,Wells Fargo sign-on path,2026-09-27
+https://www.capitalone.com/,official_home,0,Capital One public home page,2026-09-27
+https://www.icicibank.com/personal-banking/online-services,official_payment,0,ICICI Bank online services path,2026-09-27
+https://www.sbi.co.in/web/personal-banking,official_payment,0,State Bank of India personal banking page,2026-09-27
+https://netbanking.hdfcbank.com/netbanking/,official_login,0,HDFC Bank netbanking hostname,2026-09-27
+https://www.irs.gov/payments,official_government,0,US Internal Revenue Service payment page,2026-09-27
+https://login.gov/,official_login,0,US government identity sign-in service,2026-09-27
+https://www.gov.uk/sign-in,official_government,0,UK government sign-in route,2026-09-27
+https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html,official_government,0,Canada Revenue Agency online login information,2026-09-27
+https://www.zoom.us/signin,official_login,0,Zoom sign-in path,2026-09-27
+https://www.adobe.com/account.html,official_account,0,Adobe account page,2026-09-27
+https://account.adobe.com/,official_account,0,Adobe account hostname,2026-09-27
+https://www.office.com/login,official_login,0,Microsoft Office login path,2026-09-27
+https://www.notion.so/login,official_login,0,Notion login path,2026-09-27
+https://www.linkedin.com/uas/login,official_login,0,LinkedIn login path,2026-09-27
+https://www.netflix.com/login,official_login,0,Netflix login path,2026-09-27
+https://www.instagram.com/accounts/login/,official_login,0,Instagram account login path,2026-09-27
+https://www.facebook.com/login/,official_login,0,Facebook login path,2026-09-27
+https://www.cloudflare.com/login/,official_login,0,Cloudflare login path,2026-09-27
+https://www.atlassian.com/software/jira,official_content,0,Atlassian Jira product information,2026-09-27
+https://id.atlassian.com/login,official_login,0,Atlassian identity login hostname,2026-09-27

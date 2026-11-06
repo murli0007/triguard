@@ -1,0 +1,26 @@
+{
+  "model_name": "Phishing email classifier",
+  "version": "1.0.0",
+  "dataset": "DEMO synthetic examples",
+  "training_source": "demo",
+  "training_date": "2026-09-26T15:58:25.262876+00:00",
+  "rows": 20,
+  "feature_count": 24,
+  "metrics": {
+    "accuracy": 0.75,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "confusion_matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "roc_auc": 0.875
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "generated_at_utc": "2026-09-27T05:59:05.434932+00:00",
+  "input_sources": [
+    {
+      "source": "UCI PhiUSIIL Phishing URL (Website), dataset 967",
+      "path": "/Users/kshitijdongre/Desktop/ai_phishing_detector_final/data/raw/PhiUSIIL_Phishing_URL_Dataset.csv",
+      "rows_read": 235795,
+      "rows_accepted": 235787,
+      "rows_rejected": 8,
+      "source_label_definition": "1=legitimate, 0=phishing",
+      "project_label_definition": "0=legitimate, 1=phishing",
+      "license": "CC BY 4.0",
+      "donated_to_UCI": "2024-03-03",
+      "observation_timestamps_available": false
+    }
+  ],
+  "preprocessing": [
+    "Normalize missing schemes as HTTPS and validate HTTP(S) syntax; never fetch URLs.",
+    "Map labels to 0=legitimate, 1=phishing.",
+    "Derive registrable domains with the bundled Public Suffix List snapshot for split groups.",
+    "Remove malformed/over-2048-character URLs.",
+    "Remove URLs with conflicting labels; merge exact same-label duplicates and preserve source provenance.",
+    "Keep hard negatives in a separate CSV; the trainer assigns registrable domains to fit augmentation or held-out challenge evaluation."
+  ],
+  "deduplication": {
+    "conflicting_url_labels_removed": 0,
+    "same_label_duplicate_rows_merged": 425
+  },
+  "rows_after_cleaning": 235362,
+  "class_counts": {
+    "legitimate": 134850,
+    "phishing": 100512
+  },
+  "unique_registrable_domains": 175507,
+  "timestamp_rows": 0,
+  "source_counts": {
+    "UCI PhiUSIIL 967": 235362
+  },
+  "hard_negative_challenge": {
+    "path": "/Users/kshitijdongre/Desktop/ai_phishing_detector_final/data/processed/url_hard_negative_urls.csv",
+    "manual_rows": 47,
+    "external_official_rows": 104,
+    "mined_UCI_legitimate_rows": 1193,
+    "total_unique_rows": 1344,
+    "unique_registrable_domains": 1326,
+    "mining_rule": "UCI label=legitimate plus login/signin/verify/security/secure/account/auth/payment/billing/password/support/invoice/banking/identity/portal/sso/checkout/recover/reset/credential/confirm/profile/service/user/customer/member/subscription URL substring OR query length >=40 with >=1 parameter OR >=2 query parameters OR path depth >=4 OR URL length >=110; maximum 5 URLs per registrable domain",
+    "mined_license": "CC BY 4.0 inherited from UCI; attribution required",
+    "role": "partitioned by registrable domain; fit subset may augment training, held-out subset reports challenge performance; no threshold or model tuning on held-out subset"
+  },
+  "temporal_evaluation_available": false
+}

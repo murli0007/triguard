@@ -1,0 +1,570 @@
+:root {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #182234;
+    background: #f4f6fa;
+    font-synthesis: none
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0
+}
+
+.shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 245px 1fr
+}
+
+.sidebar {
+    background: #0c1627;
+    color: #d6deeb;
+    padding: 25px 16px;
+    display: flex;
+    flex-direction: column
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 10px 43px
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    background: #79d5b1;
+    color: #0c1627;
+    font-weight: 900;
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 21px
+}
+
+.brand strong {
+    display: block;
+    font-size: 16px
+}
+
+.brand small {
+    display: block;
+    color: #8190a6;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    margin-top: 2px
+}
+
+.side-label {
+    font-size: 10px;
+    color: #76859a;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    padding: 0 12px 10px
+}
+
+.tabs {
+    display: grid;
+    gap: 5px
+}
+
+.tab {
+    border: 0;
+    border-radius: 8px;
+    color: #aeb9ca;
+    background: transparent;
+    text-align: left;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer
+}
+
+.tab span {
+    font-size: 16px;
+    margin-right: 9px
+}
+
+.tab.active {
+    background: #1c2c41;
+    color: #a5f0d0
+}
+
+.sidebar-foot {
+    margin-top: auto;
+    border-top: 1px solid #263247;
+    padding: 20px 9px 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.sidebar-foot strong,
+.sidebar-foot small {
+    display: block;
+    font-size: 12px
+}
+
+.sidebar-foot small {
+    font-size: 10px;
+    color: #8794a8;
+    margin-top: 3px
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #62d19e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #62d19e20
+}
+
+.main {
+    max-width: 1250px;
+    width: 100%;
+    padding: 34px 5vw 24px;
+    margin: 0 auto
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.eyebrow {
+    font-size: 10px;
+    color: #738196;
+    font-weight: 800;
+    letter-spacing: 1.2px
+}
+
+.eyebrow span {
+    color: #4d9e7d
+}
+
+h1 {
+    font-size: 25px;
+    margin: 8px 0 0;
+    letter-spacing: -.5px
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+
+.local-badge {
+    font-size: 11px;
+    color: #347b5c;
+    background: #e7f6ef;
+    padding: 8px 11px;
+    border-radius: 20px;
+    font-weight: 700
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #dfe8f5;
+    color: #324c70;
+    font-size: 11px;
+    font-weight: 800
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #11233b;
+    color: #f5f8fc;
+    margin: 32px 0 20px;
+    padding: 25px 28px;
+    border-radius: 13px;
+    overflow: hidden
+}
+
+.intro h2 {
+    font-size: 19px;
+    margin: 0 0 7px
+}
+
+.intro p {
+    font-size: 12px;
+    color: #aab8ca;
+    margin: 0
+}
+
+.shield {
+    font-size: 45px;
+    color: #75d3ad;
+    opacity: .85;
+    padding: 0 15px
+}
+
+.panel {
+    display: none
+}
+
+.panel.active {
+    display: block
+}
+
+.scan-card,
+.recent-card {
+    background: #fff;
+    border: 1px solid #e6eaf0;
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 16px #18223408
+}
+
+.scan-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 750;
+    margin: 0 0 7px
+}
+
+.field-hint {
+    font-size: 11px;
+    color: #8490a0;
+    margin: 0 0 12px
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dce2e9;
+    border-radius: 8px;
+    padding-left: 12px
+}
+
+.input-row>span {
+    color: #7d899a;
+    font-size: 18px
+}
+
+.input-row input {
+    border: 0;
+    outline: 0;
+    flex: 1;
+    min-width: 50px;
+    padding: 12px;
+    font: inherit;
+    font-size: 13px
+}
+
+.scan-card input:not([type=file]),
+textarea {
+    width: 100%;
+    border: 1px solid #dce2e9;
+    border-radius: 8px;
+    padding: 12px;
+    font: inherit;
+    font-size: 13px;
+    outline-color: #69bd9e;
+    margin-bottom: 15px
+}
+
+.input-row input {
+    margin: 0
+}
+
+.scan-card button[type=submit] {
+    border: 0;
+    background: #176d53;
+    color: white;
+    font-size: 12px;
+    font-weight: 750;
+    border-radius: 7px;
+    padding: 11px 14px;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.scan-card button span {
+    margin-left: 9px
+}
+
+.scan-card textarea {
+    resize: vertical
+}
+
+.dropzone {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 135px;
+    border: 1px dashed #bfcbd8;
+    border-radius: 9px;
+    color: #29394c;
+    cursor: pointer
+}
+
+.dropzone small {
+    font-weight: 400;
+    color: #7b8796
+}
+
+.dropzone input {
+    display: none
+}
+
+.upload-icon {
+    font-size: 24px;
+    color: #399875
+}
+
+.result {
+    margin-top: 17px;
+    border: 1px solid #e1e6ec;
+    border-radius: 12px;
+    padding: 19px 22px;
+    background: white
+}
+
+.result[data-level=safe] {
+    border-left: 4px solid #38a777
+}
+
+.result[data-level=suspicious] {
+    border-left: 4px solid #e5a72c
+}
+
+.result[data-level=malicious] {
+    border-left: 4px solid #dc5353
+}
+
+.result-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.result h2 {
+    font-size: 19px;
+    margin: 4px 0
+}
+
+.score {
+    font-size: 25px;
+    font-weight: 800
+}
+
+.score small {
+    font-size: 10px;
+    color: #778497;
+    display: block;
+    text-align: right
+}
+
+.confidence {
+    font-size: 12px;
+    color: #4c5a6d;
+    margin: 9px 0
+}
+
+.reason-list {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    font-size: 12px;
+    color: #415065;
+    line-height: 1.7
+}
+
+.model-line {
+    font-size: 10px;
+    color: #78869a;
+    margin: 10px 0 0
+}
+
+.recent-card {
+    margin-top: 18px;
+    padding: 18px 21px
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.section-heading h3 {
+    margin: 0;
+    font-size: 13px
+}
+
+.section-heading p {
+    font-size: 10px;
+    color: #8490a0;
+    margin: 4px 0 0
+}
+
+.text-button {
+    border: 0;
+    background: transparent;
+    color: #65748a;
+    font-size: 11px;
+    cursor: pointer
+}
+
+.recent-list {
+    margin-top: 12px
+}
+
+.recent-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #eef0f3;
+    font-size: 11px
+}
+
+.recent-pill {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 6px;
+    border-radius: 5px;
+    background: #eef3f7
+}
+
+.recent-pill.safe {
+    color: #287552;
+    background: #e9f7ef
+}
+
+.recent-pill.suspicious {
+    color: #89610d;
+    background: #fff6de
+}
+
+.recent-pill.malicious {
+    color: #a13838;
+    background: #ffebeb
+}
+
+.recent-summary {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #455267
+}
+
+.recent-score {
+    font-weight: 750
+}
+
+.empty-recent {
+    font-size: 11px;
+    color: #909aaa;
+    padding: 10px 0
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 10px;
+    color: #8a95a4;
+    padding: 16px 3px
+}
+
+.hidden {
+    display: none !important
+}
+
+.error-box {
+    color: #a32323;
+    background: #fff3f2
+}
+
+@media(max-width:760px) {
+    .shell {
+        grid-template-columns: 1fr
+    }
+
+    .sidebar {
+        padding: 12px;
+        display: block
+    }
+
+    .brand {
+        padding: 0 6px 12px
+    }
+
+    .brand-mark {
+        width: 29px;
+        height: 29px
+    }
+
+    .side-label,
+    .sidebar-foot {
+        display: none
+    }
+
+    .tabs {
+        display: flex;
+        gap: 4px
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 9px 4px;
+        font-size: 11px
+    }
+
+    .tab span {
+        margin-right: 4px
+    }
+
+    .main {
+        padding: 22px 15px
+    }
+
+    .intro {
+        margin-top: 19px;
+        padding: 19px
+    }
+
+    .shield {
+        font-size: 32px
+    }
+
+    .topbar h1 {
+        font-size: 21px
+    }
+
+    .scan-card {
+        padding: 18px
+    }
+
+    .input-row {
+        flex-wrap: wrap
+    }
+
+    .input-row input {
+        width: 70%
+    }
+
+    .input-row button {
+        margin: 0 0 5px 5px
+    }
+
+    footer {
+        flex-direction: column
+    }
+}

@@ -1,0 +1,1 @@
+All *_model_demo.joblib files in this directory are software-demo models trained on generated examples. The corresponding *_demo_training_metrics.json files describe only their tiny synthetic holdout splits. Do not cite them as research or real-world detection performance. Real training writes distinct *_model.joblib artifacts and *_training_metrics.json metadata.

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1627">
+    <title>Sentinel | AI Security Lab</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <div class="brand"><span class="brand-mark">S</span>
+                <div><strong>Sentinel</strong><small>SECURITY LAB</small></div>
+            </div>
+            <div class="side-label">ANALYSIS</div>
+            <nav class="tabs"><button class="tab active" data-tab="url"><span>↗</span> URL scanner</button><button
+                    class="tab" data-tab="email"><span>✉</span> Email scanner</button><button class="tab"
+                    data-tab="file"><span>▧</span> File scanner</button></nav>
+            <div class="sidebar-foot"><span class="pulse"></span>
+                <div><strong id="status">Connecting…</strong><small id="modeLabel">Local analysis service</small></div>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="eyebrow">THREAT ANALYSIS / <span id="activeName">URL SCANNER</span></div>
+                    <h1>Security analysis</h1>
+                </div>
+                <div class="top-right"><span class="local-badge">● Local API</span><span class="avatar">AI</span></div>
+            </header>
+            <section class="intro">
+                <div>
+                    <h2>Inspect a potential threat</h2>
+                    <p>Run a focused analysis with the relevant model. Submitted content is processed locally.</p>
+                </div>
+                <div class="shield">⬡</div>
+            </section>
+            <section id="url" class="panel active">
+                <form id="urlForm" class="scan-card"><label for="urlInput">Website URL</label>
+                    <p class="field-hint">Enter a domain or URL, with or without https:// (for example, example.com,
+                        www.example.com, or https://example.com/account). No webpage is fetched.</p>
+                    <div class="input-row"><span>⌕</span><input id="urlInput" type="text" inputmode="url"
+                            autocomplete="url"
+                            placeholder="example.com, www.example.com, or https://example.com/account" required
+                            maxlength="2048"><button type="submit">Analyze URL <span>→</span></button></div>
+                </form>
+            </section>
+            <section id="email" class="panel">
+                <form id="emailForm" class="scan-card"><label for="subjectInput">Email subject</label><input
+                        id="subjectInput" placeholder="Your account needs attention" maxlength="500"><label
+                        for="bodyInput">Email body</label><textarea id="bodyInput" rows="8"
+                        placeholder="Paste the email text or HTML here…"></textarea><button type="submit">Analyze email
+                        <span>→</span></button></form>
+            </section>
+            <section id="file" class="panel">
+                <form id="fileForm" class="scan-card"><label for="fileInput">Static file analysis</label>
+                    <p class="field-hint">Reads file metadata and bytes only. Files are never executed. Maximum size 10
+                        MiB.</p><label class="dropzone" for="fileInput"><span class="upload-icon">↑</span><strong>Choose
+                            a file to analyze</strong><small id="fileName">Supported: PE, PDF, Office, BIN, TXT · 10 MiB
+                            max</small><input id="fileInput" type="file" required></label><button type="submit">Analyze
+                        file <span>→</span></button>
+                </form>
+            </section>
+            <section class="result hidden" id="result" aria-live="polite"></section>
+            <section class="recent-card">
+                <div class="section-heading">
+                    <div>
+                        <h3>Recent results</h3>
+                        <p>Stored in this browser only. Email and file content are not retained.</p>
+                    </div><button id="clearRecent" class="text-button">Clear</button>
+                </div>
+                <div id="recentResults" class="recent-list">
+                    <div class="empty-recent">No scans in this session yet.</div>
+                </div>
+            </section>
+            <footer><span id="modelStatus">Loading model status…</span><span>Risk score is a triage scale, not a
+                    probability of attack.</span></footer>
+        </main>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+{
+  "status": "completed",
+  "rows": 10,
+  "legitimate_count": 10,
+  "false_positive_rate_malicious_only_after_structural_guard": 0.1,
+  "false_positive_rate_any_warning": 1.0,
+  "results": [
+    {
+      "url": "https://www.bharatividyapeethfees.com/college/payment",
+      "category": "university payment portal",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999999999996396,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": [
+        "URL contains security/account terms: payment."
+      ]
+    },
+    {
+      "url": "https://www.bvuniversity.edu.in/payment-procedure",
+      "category": "university payment instructions",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999950669611504,
+      "application_risk_score": 100.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": [
+        "URL contains security/account terms: payment."
+      ]
+    },
+    {
+      "url": "https://www.bvuniversity.edu.in/fee-structure",
+      "category": "university fee information",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999983404774775,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": []
+    },
+    {
+      "url": "https://example.com/login/secure/account/verify/payment?continue=%2Fdashboard%3Fstep%3D2",
+      "category": "URL with suspicious words in a reserved-domain control path",
+      "expected_label": 0,
+      "prediction": "malicious",
+      "model_probability": 1.0,
+      "application_risk_score": 100.0,
+      "structural_signal_count": 2,
+      "domain_seen_in_training": false,
+      "indicators": [
+        "URL contains security/account terms: account, login, payment, secure, verify."
+      ]
+    },
+    {
+      "url": "https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin",
+      "category": "cloud account login",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 1.0,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": true,
+      "indicators": [
+        "URL contains security/account terms: signin."
+      ]
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/32040?hl=en",
+      "category": "cloud support subdomain",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 1.0,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": []
+    },
+    {
+      "url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=201910460",
+      "category": "e-commerce help page",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 1.0,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": []
+    },
+    {
+      "url": "https://www.bbc.com/news/technology",
+      "category": "news article",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999999999999649,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": []
+    },
+    {
+      "url": "https://console.aws.amazon.com/console/home",
+      "category": "cloud console subdomain",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999999999999998,
+      "application_risk_score": 69.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": false,
+      "indicators": []
+    },
+    {
+      "url": "https://www.dropbox.com/login",
+      "category": "cloud file-service login",
+      "expected_label": 0,
+      "prediction": "suspicious",
+      "model_probability": 0.9999864108329087,
+      "application_risk_score": 100.0,
+      "structural_signal_count": 0,
+      "domain_seen_in_training": true,
+      "indicators": [
+        "URL contains security/account terms: login."
+      ]
+    }
+  ],
+  "note": "Small curated challenge set; these rates are descriptive and are not a population estimate."
+}

@@ -1,0 +1,143 @@
+url,category,expected_label,provenance,review_date,source
+https://slack.com/signin,enterprise_login,0,Slack official sign-in endpoint,2026-09-27,external official URL challenge
+https://www.oracle.com/account/sign-in/,enterprise_account,0,Oracle official account sign-in path on its corporate domain,2026-09-27,external official URL challenge
+https://www.sap.com/account/login.html,enterprise_account,0,SAP official account path on its corporate domain,2026-09-27,external official URL challenge
+https://account.docusign.com/,enterprise_login,0,Docusign account sign-in host,2026-09-27,external official URL challenge
+https://accounts.shopify.com/store-login,enterprise_login,0,Shopify accounts host and store login path,2026-09-27,external official URL challenge
+https://myaccount.payoneer.com/,enterprise_account,0,Payoneer account portal host,2026-09-27,external official URL challenge
+https://www.ssa.gov/myaccount/,government_account,0,Official US Social Security online account page,2026-09-27,external official URL challenge
+https://my.gov.au/,government_account,0,Australian Government myGov account homepage,2026-09-27,external official URL challenge
+https://www.eesti.ee/en,government_portal,0,Estonian state portal homepage,2026-09-27,external official URL challenge
+https://www.singpass.gov.sg/,government_authentication,0,Singapore Government Singpass authentication homepage,2026-09-27,external official URL challenge
+https://www.myhealthrecord.gov.au/,government_account,0,Australian Government My Health Record service homepage,2026-09-27,external official URL challenge
+https://www.ato.gov.au/online-services,government_account,0,Australian Taxation Office online services page,2026-09-27,external official URL challenge
+https://www.revenue.ie/en/online-services/index.aspx,government_account,0,Irish Revenue online services page,2026-09-27,external official URL challenge
+https://www.mass.gov/,government_services,0,Massachusetts state government homepage,2026-09-27,external official URL challenge
+https://www.colorado.gov/,government_services,0,Colorado state government homepage,2026-09-27,external official URL challenge
+https://www.medicare.gov/account/login,government_account,0,US Medicare account login path,2026-09-27,external official URL challenge
+https://www.medicaid.gov/,government_services,0,US Medicaid government information homepage,2026-09-27,external official URL challenge
+https://www.hud.gov/,government_services,0,US Department of Housing and Urban Development homepage,2026-09-27,external official URL challenge
+https://www.epa.gov/,government_services,0,US Environmental Protection Agency homepage,2026-09-27,external official URL challenge
+https://sso.nottingham.ac.uk/,university_authentication,0,University of Nottingham single sign-on host,2026-09-27,external official URL challenge
+https://myportal.durham.ac.uk/,university_portal,0,Durham University portal host,2026-09-27,external official URL challenge
+https://myaccount.birmingham.ac.uk/,university_account,0,University of Birmingham account portal host,2026-09-27,external official URL challenge
+https://my.kent.ac.uk/,university_portal,0,University of Kent portal host,2026-09-27,external official URL challenge
+https://my.cardiff.ac.uk/,university_portal,0,Cardiff University portal host,2026-09-27,external official URL challenge
+https://my.kingston.ac.uk/,university_portal,0,Kingston University portal host,2026-09-27,external official URL challenge
+https://my.brunel.ac.uk/,university_portal,0,Brunel University portal host,2026-09-27,external official URL challenge
+https://my.uclan.ac.uk/,university_portal,0,University of Central Lancashire portal host,2026-09-27,external official URL challenge
+https://my.uvm.edu/,university_portal,0,University of Vermont portal host,2026-09-27,external official URL challenge
+https://my.gmu.edu/,university_portal,0,George Mason University portal host,2026-09-27,external official URL challenge
+https://my.ohio.edu/,university_portal,0,Ohio University portal host,2026-09-27,external official URL challenge
+https://my.uoregon.edu/,university_portal,0,University of Oregon portal host,2026-09-27,external official URL challenge
+https://my.fiu.edu/,university_portal,0,Florida International University portal host,2026-09-27,external official URL challenge
+https://my.txstate.edu/,university_portal,0,Texas State University portal host,2026-09-27,external official URL challenge
+https://my.vuw.ac.nz/,university_portal,0,Victoria University of Wellington portal host,2026-09-27,external official URL challenge
+https://my.une.edu.au/,university_portal,0,University of New England Australia portal host,2026-09-27,external official URL challenge
+https://my.ucc.ie/,university_portal,0,University College Cork portal host,2026-09-27,external official URL challenge
+https://www.citizensbank.com/,banking_home,0,Citizens Bank official website,2026-09-27,external official URL challenge
+https://www.regions.com/,banking_home,0,Regions Bank official website,2026-09-27,external official URL challenge
+https://www.53.com/,banking_home,0,Fifth Third Bank official website,2026-09-27,external official URL challenge
+https://www.natwest.com/,banking_home,0,NatWest official website,2026-09-27,external official URL challenge
+https://www.absa.co.za/,banking_home,0,Absa official banking website,2026-09-27,external official URL challenge
+https://www.standardbank.co.za/,banking_home,0,Standard Bank official website,2026-09-27,external official URL challenge
+https://www.sofi.com/login/,banking_login,0,SoFi official login path,2026-09-27,external official URL challenge
+https://www.wealthsimple.com/en-ca/login,banking_login,0,Wealthsimple official login path,2026-09-27,external official URL challenge
+https://robinhood.com/login,banking_login,0,Robinhood official login path,2026-09-27,external official URL challenge
+https://www.principal.com/,banking_home,0,Principal Financial Group official website,2026-09-27,external official URL challenge
+https://www.bmo.com/,banking_home,0,BMO official banking website,2026-09-27,external official URL challenge
+https://www.rbcroyalbank.com/,banking_home,0,RBC Royal Bank official website,2026-09-27,external official URL challenge
+https://www.td.com/ca/en/personal-banking,banking_home,0,TD Canada Trust personal banking page,2026-09-27,external official URL challenge
+https://www.capitecbank.co.za/,banking_home,0,Capitec official website,2026-09-27,external official URL challenge
+https://www.nordea.com/,banking_home,0,Nordea official website,2026-09-27,external official URL challenge
+https://www.ing.com/,banking_home,0,ING official website,2026-09-27,external official URL challenge
+https://www.dbs.com/,banking_home,0,DBS official website,2026-09-27,external official URL challenge
+https://www.maybank.com/,banking_home,0,Maybank official website,2026-09-27,external official URL challenge
+https://www.cimb.com/,banking_home,0,CIMB official website,2026-09-27,external official URL challenge
+https://www.bdo.com.ph/,banking_home,0,BDO Unibank official website,2026-09-27,external official URL challenge
+https://www.bankofireland.com/,banking_home,0,Bank of Ireland official website,2026-09-27,external official URL challenge
+https://www.aib.ie/,banking_home,0,AIB official website,2026-09-27,external official URL challenge
+https://www.rabobank.com/,banking_home,0,Rabobank official website,2026-09-27,external official URL challenge
+https://www.abnamro.com/,banking_home,0,ABN AMRO official website,2026-09-27,external official URL challenge
+https://www.ubs.com/,banking_home,0,UBS official website,2026-09-27,external official URL challenge
+https://www.credit-suisse.com/,banking_home,0,Credit Suisse official website,2026-09-27,external official URL challenge
+https://www.db.com/,banking_home,0,Deutsche Bank official website,2026-09-27,external official URL challenge
+https://www.commerzbank.com/,banking_home,0,Commerzbank official website,2026-09-27,external official URL challenge
+https://www.n26.com/,banking_home,0,N26 official website,2026-09-27,external official URL challenge
+https://www.bunq.com/,banking_home,0,bunq official website,2026-09-27,external official URL challenge
+https://www.kbc.be/,banking_home,0,KBC official website,2026-09-27,external official URL challenge
+https://www.belfius.be/,banking_home,0,Belfius official website,2026-09-27,external official URL challenge
+https://www.santander.co.uk/,banking_home,0,Santander UK official website,2026-09-27,external official URL challenge
+https://www.ulsterbank.co.uk/,banking_home,0,Ulster Bank official website,2026-09-27,external official URL challenge
+https://www.metrobankonline.co.uk/,banking_home,0,Metro Bank UK official website,2026-09-27,external official URL challenge
+https://www.anz.com.au/,banking_home,0,ANZ Australia official website,2026-09-27,external official URL challenge
+https://www.kiwibank.co.nz/,banking_home,0,Kiwibank official website,2026-09-27,external official URL challenge
+https://www.anz.co.nz/,banking_home,0,ANZ New Zealand official website,2026-09-27,external official URL challenge
+https://www.tangerine.ca/,banking_home,0,Tangerine Bank official website,2026-09-27,external official URL challenge
+https://www.meridiancu.ca/,banking_home,0,Meridian Credit Union official website,2026-09-27,external official URL challenge
+https://www.coastcapitalsavings.com/,banking_home,0,Coast Capital Savings official website,2026-09-27,external official URL challenge
+https://www.bendigo.com.au/,banking_home,0,Bendigo Bank official website,2026-09-27,external official URL challenge
+https://www.australianunity.com.au/,banking_home,0,Australian Unity official website,2026-09-27,external official URL challenge
+https://www.nib.com.au/,banking_home,0,nib official website,2026-09-27,external official URL challenge
+https://www.hcf.com.au/,banking_home,0,HCF official website,2026-09-27,external official URL challenge
+https://www.healthpartners.com.au/,banking_home,0,Health Partners official member services website,2026-09-27,external official URL challenge
+https://www.health.sa.gov.au/,government_services,0,South Australia Department of Health official website,2026-09-27,external official URL challenge
+https://id.cisco.com/,authentication,0,Cisco documents id.cisco.com as its login bookmark,2026-09-27,external official URL challenge
+https://login.microsoftonline.com/,enterprise_authentication,0,Microsoft identity platform sign-in endpoint,2026-09-27,external official URL challenge
+https://login.live.com/,account_management,0,Microsoft consumer account sign-in,2026-09-27,external official URL challenge
+https://id.atlassian.com/login,enterprise_login,0,Atlassian account sign-in,2026-09-27,external official URL challenge
+https://account.adobe.com/,account_management,0,Adobe account portal,2026-09-27,external official URL challenge
+https://account.box.com/login,enterprise_login,0,Box account login,2026-09-27,external official URL challenge
+https://gitlab.com/users/sign_in,enterprise_login,0,GitLab official sign-in route,2026-09-27,external official URL challenge
+https://id.heroku.com/login,enterprise_login,0,Heroku account login,2026-09-27,external official URL challenge
+https://login.ubuntu.com/,authentication,0,Ubuntu One login service,2026-09-27,external official URL challenge
+https://login.proton.me/,account_management,0,Proton account authentication,2026-09-27,external official URL challenge
+https://login.xero.com/,enterprise_login,0,Xero account sign-in,2026-09-27,external official URL challenge
+https://accounts.autodesk.com/,enterprise_login,0,Autodesk account authentication,2026-09-27,external official URL challenge
+https://sso.godaddy.com/,enterprise_authentication,0,GoDaddy single sign-on,2026-09-27,external official URL challenge
+https://account.intuit.com/,account_management,0,Intuit account sign-in,2026-09-27,external official URL challenge
+https://secure.grammarly.com/signin,enterprise_login,0,Grammarly account sign-in,2026-09-27,external official URL challenge
+https://account.lenovo.com/,account_management,0,Lenovo account portal,2026-09-27,external official URL challenge
+https://accounts.spotify.com/en/login,account_management,0,Spotify account login,2026-09-27,external official URL challenge
+https://login.tailscale.com/admin,enterprise_authentication,0,Tailscale admin authentication endpoint,2026-09-27,external official URL challenge
+https://www.chase.com/,banking_login,0,Chase official banking homepage with sign-in,2026-09-27,external official URL challenge
+https://client.schwab.com/Areas/Access/Login,financial_services,0,Charles Schwab client login,2026-09-27,external official URL challenge
+https://online.citi.com/US/login.do,banking_login,0,Citi online banking login,2026-09-27,external official URL challenge
+https://www.wellsfargo.com/,banking_login,0,Wells Fargo official banking homepage with sign-on,2026-09-27,external official URL challenge
+https://www.capitalone.com/,banking_login,0,Capital One official banking homepage with sign-in,2026-09-27,external official URL challenge
+https://www.ally.com/,banking_login,0,Ally Bank official site,2026-09-27,external official URL challenge
+https://digital.fidelity.com/prgw/digital/signin,financial_services,0,Fidelity official retail login endpoint,2026-09-27,external official URL challenge
+https://www.americanexpress.com/,financial_services,0,American Express account services homepage,2026-09-27,external official URL challenge
+https://www.discover.com/,banking_login,0,Discover official banking homepage,2026-09-27,external official URL challenge
+https://www.navyfederal.org/,banking_login,0,Navy Federal Credit Union official banking homepage,2026-09-27,external official URL challenge
+https://www.pnc.com/,banking_login,0,PNC official banking homepage,2026-09-27,external official URL challenge
+https://www.usbank.com/,banking_login,0,U.S. Bank official banking homepage,2026-09-27,external official URL challenge
+https://www.lendingclub.com/,financial_services,0,LendingClub official financial services site,2026-09-27,external official URL challenge
+https://www.betterment.com/,financial_services,0,Betterment official financial services site,2026-09-27,external official URL challenge
+https://www.wealthfront.com/,financial_services,0,Wealthfront official financial services site,2026-09-27,external official URL challenge
+https://dashboard.stripe.com/login,enterprise_login,0,Stripe official dashboard login,2026-09-27,external official URL challenge
+https://squareup.com/login,financial_services,0,Square account sign-in,2026-09-27,external official URL challenge
+https://www.coinbase.com/signin,financial_services,0,Coinbase account sign-in,2026-09-27,external official URL challenge
+https://www.kraken.com/sign-in,financial_services,0,Kraken account sign-in,2026-09-27,external official URL challenge
+https://wise.com/login,financial_services,0,Wise account sign-in,2026-09-27,external official URL challenge
+https://myaccount.transunion.com/,account_management,0,TransUnion consumer account portal,2026-09-27,external official URL challenge
+https://www.equifax.com/personal/,account_management,0,Equifax consumer account service,2026-09-27,external official URL challenge
+https://www.experian.com/,account_management,0,Experian consumer account service,2026-09-27,external official URL challenge
+https://accounts.nintendo.com/,account_management,0,Nintendo account management portal,2026-09-27,external official URL challenge
+https://www.playstation.com/en-us/sign-in/,account_management,0,PlayStation account sign-in page,2026-09-27,external official URL challenge
+https://account.microsoft.com/,account_management,0,Microsoft consumer account page,2026-09-27,external official URL challenge
+https://account.samsung.com/,account_management,0,Samsung account portal,2026-09-27,external official URL challenge
+https://account.sony.com/,account_management,0,Sony account management portal,2026-09-27,external official URL challenge
+https://www.paychex.com/login,enterprise_login,0,Paychex official customer login entry,2026-09-27,external official URL challenge
+https://www.adp.com/logins.aspx,enterprise_login,0,ADP official login directory,2026-09-27,external official URL challenge
+https://secure.indeed.com/account/login,account_management,0,Indeed account login,2026-09-27,external official URL challenge
+https://www.coursera.org/login,account_management,0,Coursera account login,2026-09-27,external official URL challenge
+https://www.irs.gov/filing/individuals/online-account-for-individuals,government_account,0,IRS official online account information,2026-09-27,external official URL challenge
+https://my.irs.gov/,government_account,0,IRS online services account,2026-09-27,external official URL challenge
+https://mychart.org/,health_account,0,MyChart patient portal service,2026-09-27,external official URL challenge
+https://login.stanford.edu/,university_authentication,0,Stanford University login service,2026-09-27,external official URL challenge
+https://login.berkeley.edu/,university_authentication,0,UC Berkeley authentication service,2026-09-27,external official URL challenge
+https://sso.umich.edu/,university_authentication,0,University of Michigan single sign-on,2026-09-27,external official URL challenge
+https://my.harvard.edu/,university_portal,0,Harvard account portal,2026-09-27,external official URL challenge
+https://webauth.utoronto.ca/,university_authentication,0,University of Toronto authentication service,2026-09-27,external official URL challenge
+https://access.caltech.edu/,university_authentication,0,Caltech account access portal,2026-09-27,external official URL challenge

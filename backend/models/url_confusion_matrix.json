@@ -1,0 +1,17 @@
+{
+  "labels": [
+    "legitimate",
+    "phishing"
+  ],
+  "matrix": [
+    [
+      26910,
+      0
+    ],
+    [
+      1068,
+      18430
+    ]
+  ],
+  "evaluation": "domain-disjoint final test at selected malicious threshold"
+}

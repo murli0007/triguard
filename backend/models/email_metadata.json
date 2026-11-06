@@ -1,0 +1,79 @@
+{
+  "model_name": "TF-IDF + calibrated Logistic Regression",
+  "version": "2.1.0",
+  "dataset": "data/raw/phishing_emails.csv",
+  "training_source": "real",
+  "training_date": "2026-09-26T19:01:47.589254+00:00",
+  "feature_count": 60000,
+  "rows": 104328,
+  "split_method": "Source-disjoint final test; stratified calibration holdout drawn from the training sources",
+  "fit_rows": 49125,
+  "validation_rows": 8670,
+  "test_rows": 46533,
+  "fit_sources": [
+    "trec6",
+    "trec7"
+  ],
+  "validation_sources": [
+    "trec6",
+    "trec7"
+  ],
+  "test_sources": [
+    "trec5"
+  ],
+  "metrics": {
+    "threshold": 0.5,
+    "accuracy": 0.8534373455397245,
+    "precision": 0.7517002647118713,
+    "recall": 0.9623064490902455,
+    "f1": 0.8440643863179075,
+    "false_positive_rate": 0.2229087452471483,
+    "false_negative_rate": 0.037693550909754445,
+    "roc_auc": 0.9674248180526945,
+    "pr_auc_average_precision": 0.9591760373092768,
+    "brier_score": 0.10720887291690641,
+    "confusion_matrix": [
+      [
+        21255,
+        6097
+      ],
+      [
+        723,
+        18458
+      ]
+    ],
+    "support": {
+      "benign": 27352,
+      "phishing": 19181
+    }
+  },
+  "metrics_are_population_claims": false,
+  "dataset_inspection": {
+    "rows_after_cleaning": 104328,
+    "duplicate_texts_removed": 604,
+    "label_mapping": "0=benign, 1=phishing",
+    "label_counts": {
+      "benign": 57852,
+      "phishing": 46476
+    },
+    "source_counts": {
+      "trec5": 46533,
+      "trec7": 43118,
+      "trec6": 14677
+    },
+    "source_label_counts": {
+      "trec5": {
+        "0": 27352,
+        "1": 19181
+      },
+      "trec6": {
+        "0": 11180,
+        "1": 3497
+      },
+      "trec7": {
+        "1": 23798,
+        "0": 19320
+      }
+    }
+  }
+}
