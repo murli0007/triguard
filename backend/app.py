@@ -35,7 +35,7 @@ app.config["MAX_CONTENT_LENGTH"] = MAX_REQUEST_BYTES
 if os.getenv("ENABLE_EXTENSION_CORS", "1") == "1":
     CORS(app, resources={r"/api/*": {"origins": [r"chrome-extension://.*", "http://127.0.0.1:5050", "http://localhost:5050"]}})
 logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s %(message)s")
-logger = logging.getLogger("phishing_detector")
+logger = logging.getLogger("triguard")
 _artifacts: dict[str, dict] = {}
 
 

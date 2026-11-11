@@ -45,16 +45,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // covered as well; duplicate events for the same URL are collapsed below.
 function checkNavigation(details) {
   if (details.frameId !== 0 || !isWebUrl(details.url)) {
-    console.info("[Sentinel URL] Ignored non-web or subframe navigation", details.url);
+    console.info("[TriGuard URL] Ignored non-web or subframe navigation", details.url);
     return;
   }
   if (lastNavigationUrlByTab.get(details.tabId) === details.url) {
-    console.info("[Sentinel URL] Skipping duplicate navigation", {tabId: details.tabId, url: details.url});
+    console.info("[TriGuard URL] Skipping duplicate navigation", {tabId: details.tabId, url: details.url});
     return;
   }
   lastNavigationUrlByTab.set(details.tabId, details.url);
   scanUrl(details.url, details.tabId, "navigation").catch(error => {
-    console.error("[Sentinel URL] Unexpected scan failure", {tabId: details.tabId, url: details.url, error});
+    console.error("[TriGuard URL] Unexpected scan failure", {tabId: details.tabId, url: details.url, error});
   });
 }
 chrome.webNavigation.onCommitted.addListener(checkNavigation);
@@ -64,7 +64,7 @@ chrome.tabs.onRemoved.addListener(tabId => {
   lastNavigationUrlByTab.delete(tabId);
   latestRequestByTab.delete(tabId);
   chrome.storage.local.remove(resultKey(tabId)).catch(error => {
-    console.warn("[Sentinel URL] Could not clear closed-tab result", error);
+    console.warn("[TriGuard URL] Could not clear closed-tab result", error);
   });
 });
 
@@ -72,14 +72,14 @@ async function scanUrl(url, tabId, source) {
   if (!isWebUrl(url)) throw new Error("Only HTTP and HTTPS URLs can be checked.");
 
   if (!Number.isInteger(tabId)) {
-    console.info("[Sentinel URL] Scanning URL without tab storage", {source, url});
+    console.info("[TriGuard URL] Scanning URL without tab storage", {source, url});
     return checkUrl(url);
   }
 
   const flightKey = `${tabId}\n${url}`;
   const existingFlight = inFlightByTabAndUrl.get(flightKey);
   if (existingFlight) {
-    console.info("[Sentinel URL] Reusing in-flight request", {tabId, url, source});
+    console.info("[TriGuard URL] Reusing in-flight request", {tabId, url, source});
     return existingFlight;
   }
 
@@ -87,12 +87,12 @@ async function scanUrl(url, tabId, source) {
   latestRequestByTab.set(tabId, requestId);
   lastNavigationUrlByTab.set(tabId, url);
   await saveTabResult(tabId, {status: "checking", url, updatedAt: Date.now()});
-  console.info("[Sentinel URL] Sending URL to backend", {tabId, source, url});
+  console.info("[TriGuard URL] Sending URL to backend", {tabId, source, url});
 
   const request = checkUrl(url).then(async result => {
     if (latestRequestByTab.get(tabId) === requestId) {
       await saveTabResult(tabId, {status: "complete", url, result, updatedAt: Date.now()});
-      console.info("[Sentinel URL] Backend prediction received", {
+      console.info("[TriGuard URL] Backend prediction received", {
         tabId, url, prediction: result.prediction, riskScore: result.risk_score,
         model: result.model, source: result.model_source || result.training_source
       });
@@ -100,14 +100,14 @@ async function scanUrl(url, tabId, source) {
         deliverWarning(tabId, {type: "URL_WARNING", result}).catch(() => {});
       }
     } else {
-      console.info("[Sentinel URL] Ignoring stale backend response", {tabId, url});
+      console.info("[TriGuard URL] Ignoring stale backend response", {tabId, url});
     }
     return result;
   }).catch(async error => {
     if (latestRequestByTab.get(tabId) === requestId) {
       await saveTabResult(tabId, {status: "error", url, error: error.message, updatedAt: Date.now()});
     }
-    console.error("[Sentinel URL] Backend request failed", {tabId, url, error: error.message});
+    console.error("[TriGuard URL] Backend request failed", {tabId, url, error: error.message});
     return {error: error.message, url};
   }).finally(() => {
     if (inFlightByTabAndUrl.get(flightKey) === request) inFlightByTabAndUrl.delete(flightKey);
@@ -122,7 +122,7 @@ async function deliverWarning(tabId, message, attempt = 0) {
     await chrome.tabs.sendMessage(tabId, message);
   } catch (error) {
     if (attempt < 4) setTimeout(() => deliverWarning(tabId, message, attempt + 1), 500);
-    else console.info("[Sentinel URL] No content script available for warning", {tabId});
+    else console.info("[TriGuard URL] No content script available for warning", {tabId});
   }
 }
 

@@ -1,4 +1,4 @@
-# AI-Based Phishing Email & Malware Attack Detection System
+# TriGuard — Local AI Security Lab
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Framework-Flask_3.1-black?logo=flask)](https://flask.palletsprojects.com/)
@@ -6,7 +6,7 @@
 [![Manifest V3](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-4285F4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![Tests](https://img.shields.io/badge/Tests-31%20Passed-brightgreen)](tests/)
 
-An end-to-end security analysis system providing real-time threat detection across three distinct attack vectors:
+An end-to-end local AI security lab providing real-time threat detection and triage across three distinct attack vectors:
 1. **URL Phishing Scanner**: Lexical and structural feature analysis combined with character/word n-gram models.
 2. **Email Phishing Scanner**: Natural language text sanitization, TF-IDF vectorization, and calibrated Logistic Regression.
 3. **Malware Static Analyzer**: Safe, non-executing static byte entropy and PE header inspection.
@@ -74,7 +74,7 @@ The system assigns an application triage score rather than an raw uncalibrated p
 ## Project Structure
 
 ```text
-ai_phishing_detector_final 2/
+triguard/
 ├── backend/
 │   ├── app.py                      # Flask REST API server (Port 5050)
 │   ├── domain_utils.py             # Domain parsing & brand impersonation logic
@@ -183,7 +183,7 @@ APP_MODE=real URL_MODEL_VERSION=v5 python backend/app.py
 3. Enable **Developer mode** (top-right toggle).
 4. Click **Load unpacked** (top-left) and select the `extension/` folder from this repository.
 5. **Real-time Navigation Scanning**: As you browse, navigated URLs are checked asynchronously against the API, displaying a non-blocking alert banner for suspicious or malicious URLs.
-6. **Gmail Integration**: Opening any email message in Gmail extracts visible subject/body text and queries the local detector.
+6. **Gmail Integration**: Opening any email message in Gmail extracts visible subject/body text and queries the local TriGuard API.
 
 ---
 

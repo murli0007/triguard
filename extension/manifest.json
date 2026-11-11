@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "AI Security Detector",
+  "name": "TriGuard",
   "version": "1.1.0",
-  "description": "Local URL and Gmail phishing checks powered by the project API.",
+  "description": "Local AI Security Lab — real-time URL and Gmail phishing checks powered by the TriGuard API.",
   "permissions": [
     "activeTab",
     "webNavigation",

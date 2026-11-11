@@ -61,9 +61,9 @@
 
   chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     if (message?.type === "URL_WARNING") {
-      addBanner("__ai_security_url_warning", "⚠ Potential phishing website", message.result, message.result.prediction);
+      addBanner("__ai_security_url_warning", "⚠ TriGuard: Potential phishing website", message.result, message.result.prediction);
     } else if (message?.type === "EMAIL_WARNING") {
-      addBanner("__ai_security_email_warning", "⚠ Potential phishing email", message.result, message.result.prediction, true);
+      addBanner("__ai_security_email_warning", "⚠ TriGuard: Potential phishing email", message.result, message.result.prediction, true);
     } else if (message?.type === "GET_VISIBLE_EMAIL") {
       sendResponse(getVisibleEmail() || {});
     }

@@ -1,6 +1,6 @@
-# Quickstart Guide
+# TriGuard — Quickstart Guide
 
-A concise reference for running, testing, and training the **AI Phishing & Malware Detector**.
+A concise reference for running, testing, and training **TriGuard (Local AI Security Lab)**.
 
 ---
 
